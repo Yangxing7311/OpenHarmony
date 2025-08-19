@@ -103,26 +103,26 @@ public class FixedBatchWaterMeterCreator {
             try {
                 // 方案1：尝试使用AddProduct
                 AddProduct addProduct = new AddProduct();
-                addProduct.withProductName(PRODUCT_NAME)
+                addProduct.withProductId(PRODUCT_NAME)
                         .withManufacturerName("OpenHarmony生态")
-                        .withModel("WM-2024")
-                        .withProductType(DEVICE_TYPE)
+                        .withName("WM-2024")
+                        .withProductId(DEVICE_TYPE)
                         .withDescription("OpenHarmony设备统一管控平台 - 智能水表设备")
                         .withProtocolType(PROTOCOL_TYPE)
-                        .withDataType("json");
+                        .withDataFormat("json");
 
                 request.withBody(addProduct);
             } catch (Exception e1) {
                 try {
                     // 方案2：尝试使用ProductInfo
                     ProductInfo productInfo = new ProductInfo();
-                    productInfo.withProductName(PRODUCT_NAME)
+                    productInfo.withProductId(PRODUCT_NAME)
                             .withManufacturerName("OpenHarmony生态")
-                            .withModel("WM-2024")
-                            .withProductType(DEVICE_TYPE)
+                            .withName("WM-2024")
+                            .withProductId(DEVICE_TYPE)
                             .withDescription("OpenHarmony设备统一管控平台 - 智能水表设备")
                             .withProtocolType(PROTOCOL_TYPE)
-                            .withDataType("json");
+                            .withDataFormat("json");
 
                     request.withBody(productInfo);
                 } catch (Exception e2) {
